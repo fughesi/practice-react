@@ -1,0 +1,127 @@
+/**********
+ VARIABLES 
+***********/
+:root {
+  --lightColor: #aaa;
+  --darkColor: #333;
+  --accentColor: #00D8FF;
+
+  --bgDark: #21222A;
+  --bgMed: #282D35;
+
+  --tinyFont: .5rem;
+  --smallFont: clamp(1rem, 2vw, 1.5rem); 
+  --medFont: clamp(1.25rem, 3vw, 3rem);
+  --largeFont: clamp(2.1rem, 3.75vw, 4.25rem);
+}
+/*******
+ GENERAL 
+ ********/
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bgMed);
+  color: white;
+}
+#copywrite {
+  position: absolute;
+  bottom: 0.1em;
+  right: 2em;
+  
+  font-size: var(--tinyFont);
+  opacity: .7;
+}
+/**************
+MAIN CONTAINER 
+**************/
+#mainContainer {
+  width: 100vw;
+  padding: 2em;
+  position: relative;
+}
+#mainContainer h1{
+  margin: 1.25em 0;
+  font-size: var(--largeFont);
+}
+#mainContainer>ul {
+  margin: .75em 0 0 0;
+}
+#mainContainer>ul li {
+  margin: .5em 0 0 0;
+  list-style-type: none;
+  line-height: 2rem;
+}
+#mainContainer>ul li::before {
+  content: "\2022";
+  color: var(--accentColor);
+  display: inline-block;
+  width: 1em;
+  font-weight: bold;
+}
+#mainContainer img {
+  position: absolute;
+  transform: scale(.6);
+  right: -250px;
+  top: -15px;
+  opacity: .3;
+}
+/******
+NAVBAR 
+*******/
+#navBar {
+  width: 100vw;
+  padding: .75em 1.25em;
+  display: grid;
+  grid-template: 75px / 10% 90%;
+  grid-template-areas: 
+  "a b";
+
+  background: var(--bgDark);
+}
+#navBar img {
+  width: 45px;
+  grid-area: a;
+  align-self: center;
+  margin-left: auto;
+}
+#navText {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  grid-area: b;
+}
+#navText h3 {
+  color:var(--accentColor);
+  font-size: var(--smallFont);
+}
+#navBar>ul {
+  display: flex;
+  grid-area: b;
+  margin-left: auto;
+}
+#navBar>ul li {
+  padding: 0 0 0 1em;
+  list-style: none;
+  text-decoration: none;
+  align-self: center;
+}
+#navBar>ul li>a{
+  text-decoration: none;
+  font-size: var(--smallFont);
+  color: var(--darkColor);
+  cursor: pointer;
+}
+#navBar>ul li>a:hover {
+  transform: scale(1.9);
+  color: aqua;
+}
+#navBar>ul li>a:active,
+#navBar>ul li>a:focus {
+  color: pink;
+}
